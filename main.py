@@ -20,14 +20,16 @@ def countCharacters(text):
             else:
                 countLib[character] += 1
 
-    #now sort the dictionary
+    # now sort the dictionary
     countLib = dict(sorted(countLib.items(), key=lambda item: item[1], reverse=True))
     return countLib
 
 
 def printCharacters(characterCounts):
     for character in characterCounts:
-        print(f"The '{character}' character was found {characterCounts[character]} times")
+        print(
+            f"The '{character}' character was found {characterCounts[character]} times in the text"
+        )
 
 
 def main():
@@ -35,7 +37,7 @@ def main():
     text = getBookText(bookPath)
     print(f"--- Begin the report of {bookPath} ---")
     print(f"{countWords(text)} words were found in the document\n")
-    printCharacters(countCharacters(text))    
+    printCharacters(countCharacters(text))
     print("--- End report ---")
 
 
